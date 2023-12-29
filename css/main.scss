@@ -1,0 +1,87 @@
+body {
+	margin: 0;
+	font-family: Ubuntu, sans-serif;
+}
+
+h1 {
+	font-size: 5rem;
+	color: #1d1d1d;
+}
+
+section {
+	height: 100vh;
+	padding: 0 clamp(4rem, 12vw, 20rem);
+	display: grid;
+	place-content: center;
+
+	p:not(:nth-of-type(1)) {
+		font-size: clamp(2rem, 5vw, 8rem);
+	}
+
+	&:nth-of-type(1) {
+		border-bottom: 1px solid #1d1d1d;
+	}
+
+	&:nth-of-type(2) {
+		background-color: #e6ff5a;
+	}
+
+	&:nth-of-type(4) {
+		background-color: #091118;
+		color: white;
+	}
+
+	p:not(:nth-of-type(1)) {
+		animation: textAnimate linear both;
+		animation-timeline: view(block);
+		animation-range: cover 0% contain 40%;
+	}
+
+	&.text-reveal {
+		background-color: #1b1b1b;
+		color: hsl(0 0% 100%/0.2);
+		text-align: center;
+
+		h2 {
+			span {
+				font-size: 4.7rem;
+				font-weight: 500;
+				animation-range-start: contain -1vh;
+				animation-range-end: contain 22vh;
+			}
+		}
+
+		p span {
+			font-size: 1.95rem;
+			line-height: 3rem;
+			animation-range-start: contain 12vh;
+			animation-range-end: contain 50vh;
+		}
+
+		span {
+			animation: textReveal linear forwards;
+			animation-timeline: view();
+			background-repeat: no-repeat;
+			background-size: 0% 100%;
+			background-clip: text;
+			background-image: linear-gradient(90deg, #EE7501, #94C11F);
+		}
+	}
+}
+
+@keyframes textAnimate {
+	0% {
+		opacity: 0;
+		transform: scale(.5);
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes textReveal {
+	to {
+		background-size: 100% 100%;
+	}
+}
