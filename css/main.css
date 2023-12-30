@@ -5,7 +5,7 @@ body {
 
 h1 {
   font-size: 5rem;
-  color: #1d1d1d;
+  color: #78ae04;
 }
 
 section {
@@ -14,20 +14,20 @@ section {
   display: grid;
   place-content: center;
 }
-section p:not(:nth-of-type(1)) {
+section p {
   font-size: clamp(2rem, 5vw, 8rem);
 }
 section:nth-of-type(1) {
-  border-bottom: 1px solid #1d1d1d;
+  border-bottom: 4px solid #78ae04;
 }
-section:nth-of-type(2) {
+section:nth-of-type(3) {
   background-color: #e6ff5a;
 }
-section:nth-of-type(4) {
+section:nth-of-type(4n+1) {
   background-color: #091118;
   color: white;
 }
-section p:not(:nth-of-type(1)) {
+section p.reveal-type {
   animation: textAnimate linear both;
   animation-timeline: view(block);
   animation-range: cover 0% contain 40%;
@@ -43,9 +43,11 @@ section.text-reveal h2 span {
   animation-range-start: contain -1vh;
   animation-range-end: contain 22vh;
 }
-section.text-reveal p span {
+section.text-reveal p {
   font-size: 1.95rem;
   line-height: 3rem;
+}
+section.text-reveal p span {
   animation-range-start: contain 12vh;
   animation-range-end: contain 50vh;
 }
